@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("no response @mock-ex34", async ({ page }) => {
-  const expectedContent = "";
+  const expectedContent = "No dataError loading comments. Please contact administrator";
 
   const apiPath = "**/api/articles/1";
 

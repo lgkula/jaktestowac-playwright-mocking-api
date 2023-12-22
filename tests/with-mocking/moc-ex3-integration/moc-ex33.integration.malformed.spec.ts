@@ -14,7 +14,7 @@ test("malformed response @mock-ex34", async ({ page }) => {
   });
 
   await page.goto("/article.html?id=1");
-
+  // await page.waitForTimeout(1_000)
   // content container
   const observedContent = page.locator("#container");
 

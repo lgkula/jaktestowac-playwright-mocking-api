@@ -11,7 +11,7 @@ for (const title of TITLES) {
       const response = await route.fetch();
       const json = await response.json();
       json.title = expectedTitle;
-      await route.fulfill({ response, json });
+      await route.fulfill({ json });
     });
 
     await page.goto("/article.html?id=1");

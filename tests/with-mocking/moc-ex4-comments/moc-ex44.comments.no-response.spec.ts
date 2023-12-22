@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("no response @mock-ex44", async ({ page }) => {
-  const expectedContent = "";
+  const expectedContent = "Error loading comments. Please contact administrator";
 
   const apiPath = "**/api/comments?article_id=1";
 
@@ -12,7 +12,7 @@ test("no response @mock-ex44", async ({ page }) => {
   await page.goto("/article.html?id=1");
 
   // Content container
-  const observedContent = page.locator("#container");
+  const observedContent = page.locator("#containerComments");
 
   await expect(observedContent).toHaveText(expectedContent);
 });

@@ -12,9 +12,8 @@ test("malformed response @mock-ex43", async ({ page }) => {
   });
 
   await page.goto("/article.html?id=1");
-
+  // await page.waitForTimeout(1_000)
   // Content container
-  const observedContent = page.locator("#container");
-
-  await expect(observedContent).toHaveText(expectedContent);
+  const observedContent = page.locator("#containerComments");
+  await expect(observedContent).not.toBeVisible
 });

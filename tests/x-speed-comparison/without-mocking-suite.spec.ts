@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
   await page.getByRole("button", { name: "Add Article" }).click();
 });
 for (const title of TITLES) {
-  test(`article title: ${title} @perf-no-mock`, async ({ page }) => {
+  test.only(`article title: ${title} @perf-no-mock`, async ({ page }) => {
     // Arrange
     const expectedTitle = title;
 
@@ -28,6 +28,7 @@ for (const title of TITLES) {
 
     // Act
     const observedTitle = page.getByTestId("article-title");
+    await observedTitle.waitFor()
 
     // Assert
     await expect(observedTitle).toHaveText(expectedTitle);

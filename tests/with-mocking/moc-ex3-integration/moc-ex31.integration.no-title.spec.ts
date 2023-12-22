@@ -14,7 +14,7 @@ test("without title @mock-ex31", async ({ page }) => {
     const json = await response.json();
     // passing mocked title
     json.title = mockedTitle;
-    await route.fulfill({ response, json });
+    await route.fulfill({ json });
   });
 
   await page.goto("/article.html?id=1");
